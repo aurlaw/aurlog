@@ -124,75 +124,75 @@ func Configure(config *LogConfiguration) *AurLog {
 
 // Debug message using log.Print
 func (l *AurLog) Debug(v ...interface{}) {
-	debugLvl.Print(v)
+	debugLvl.Print(v...)
 }
 
 // Debug message using log.PrintLn
 func (l *AurLog) Debugln(v ...interface{}) {
-	debugLvl.Println(v)
+	debugLvl.Println(v...)
 }
 
 // Debug message using log.Printf
 func (l *AurLog) Debugf(format string, v ...interface{}) {
-	debugLvl.Printf(format, v)
+	debugLvl.Printf(format, v...)
 }
 
 // Info message using log.Print
 func (l *AurLog) Info(v ...interface{}) {
-	infoLvl.Print(v)
+	infoLvl.Print(v...)
 }
 
 // Info message using log.PrintLn
 func (l *AurLog) Infoln(v ...interface{}) {
-	infoLvl.Println(v)
+	infoLvl.Println(v...)
 }
 
 // Info message using log.Printf
 func (l *AurLog) Infof(format string, v ...interface{}) {
-	infoLvl.Printf(format, v)
+	infoLvl.Printf(format, v...)
 }
 
 // Warning message using log.Print
 func (l *AurLog) Warning(v ...interface{}) {
-	warningLvl.Print(v)
+	warningLvl.Print(v...)
 }
 
 // Warning message using log.PrintLn
 func (l *AurLog) Warningln(v ...interface{}) {
-	warningLvl.Println(v)
+	warningLvl.Println(v...)
 }
 
 // Warning message using log.Printf
 func (l *AurLog) Warningf(format string, v ...interface{}) {
-	warningLvl.Printf(format, v)
+	warningLvl.Printf(format, v...)
 }
 
 // Error message using log.Print
 func (l *AurLog) Error(v ...interface{}) {
-	errorLvl.Print(v)
+	errorLvl.Print(v...)
 }
 
 // Error message using log.PrintLn
 func (l *AurLog) Errorln(v ...interface{}) {
-	errorLvl.Println(v)
+	errorLvl.Println(v...)
 }
 
 // Error message using log.Printf
 func (l *AurLog) Errorf(format string, v ...interface{}) {
-	errorLvl.Printf(format, v)
+	errorLvl.Printf(format, v...)
 }
 
 // Fatal is equivalent to Print() followed by a call to os.Exit(1).
 func (l *AurLog) Fatal(v ...interface{}) {
-	fatalLvl.Fatal(v)
+	fatalLvl.Fatal(v...)
 }
 
 // Fatalf is equivalent to Printf() followed by a call to os.Exit(1).
 func (l *AurLog) Fatalf(format string, v ...interface{}) {
-	fatalLvl.Fatalf(format, v)
+	fatalLvl.Fatalf(format, v...)
 }
 
 // Fatalln is equivalent to Println() followed by a call to os.Exit(1).
 func (l *AurLog) Fatalln(v ...interface{}) {
-	fatalLvl.Fatalln(v)
+	fatalLvl.Fatalln(v...)
 }
