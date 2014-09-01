@@ -1,11 +1,8 @@
-/*
-A custom log library that extends the Standard Go log
+// A custom log library that extends the Standard Go log
 
-Defines a Debug, Info, Warning and Error log level
+// Defines a Debug, Info, Warning and Error log level
 
-Allows for redirecting log output to a file and/or the Standard Out & Err
-
-*/
+// Allows for redirecting log output to a file and/or the Standard Out & Err
 
 package aurlog
 
@@ -15,6 +12,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
 	"time"
 )
 
@@ -65,8 +63,12 @@ func Configure(config *LogConfiguration) *AurLog {
 	if config.LogFile != "" {
 		const layout = "2006-01-02"
 		t := time.Now()
-		fileName := fmt.Sprintf("%s_%s", t.Format(layout), config.LogFile)
-		lfile, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+		dir := filepath.Dir(config.LogFile)
+		fileName := filepath.Base(config.LogFile)
+
+		newFileName := fmt.Sprintf("%s_%s", t.Format(layout), fileName)
+		absFile := filepath.Join(dir, newFileName)
+		lfile, err := os.OpenFile(absFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 		if err != nil {
 			panic(err)
 		}
@@ -194,25 +196,3 @@ func (l *AurLog) Fatalf(format string, v ...interface{}) {
 func (l *AurLog) Fatalln(v ...interface{}) {
 	fatalLvl.Fatalln(v)
 }
-
-// func main() {
-
-// 	al := Configure(nil)
-
-// 	al.Debugln("I have something to say for debug")
-// 	al.Infoln("I have something to say for info")
-// 	al.Warningln("I have something to say for warning")
-// 	al.Errorln("I have something to say for error")
-
-// 	lc := LogConfiguration{LogFile: "test.log", NoStdOut: true}
-// 	lc.IsInfo = true
-// 	lc.IsError = true
-
-// 	al2 := Configure(&lc)
-
-// 	al2.Debugln("I have something to say for debug again")
-// 	al2.Infoln("I have something to say for info again")
-// 	al2.Warningln("I have something to say for warning again")
-// 	al2.Errorln("I have something to say for error again")
-
-// }

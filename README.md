@@ -72,7 +72,7 @@ The following log levels can be enabled
 
 
 #### Additional Configuration
-* LogFile - defines the log file. All logfiles are prepended with the current date in yyyy-mm-dd format. If not supplied, uses the StdOut and StdErr defined by the [Standard Go Log](http://golang.org/pkg/log/)
+* LogFile - defines the log file. All logfiles are prepended with the current date in yyyy-mm-dd format. If not supplied, uses the StdOut and StdErr defined by the [Standard Go Log](http://golang.org/pkg/log/). LogFile can contain an absolute or relative path
 * NoStdOut - if set to true, disables logging to the StdOut or StdErr. False by default
 
 
