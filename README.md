@@ -1,6 +1,6 @@
 # aurlog
 
-https://travis-ci.org/aurlaw/aurlog.svg
+[![Build Status](https://travis-ci.org/aurlaw/aurlog.svg)](https://travis-ci.org/aurlaw/aurlog)
 
 Simple file-based wrapper for the standard Go log
 
