@@ -1,5 +1,6 @@
 # aurlog
 
+https://travis-ci.org/aurlaw/aurlog.svg
 
 Simple file-based wrapper for the standard Go log
 
